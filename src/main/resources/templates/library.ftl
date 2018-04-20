@@ -35,7 +35,6 @@
             <input class="input-field" type="number" id="age" name="age">
         </label>
         <input type="submit" value="Add reader">
-        <input type="submit" value="Find by first name">
     </form>
 </div>
 
@@ -55,6 +54,15 @@
         </tr>
     </#list>
     </table>
+    <form method="post" action="/library">
+        <label for="title">Title
+            <input class="input-field" type="text" id="title" name="title">
+        </label>
+        <label for="author">Author
+            <input class="input-field" type="text" id="author" name="author">
+        </label>
+        <input type="submit" value="Add book">
+    </form>
 </div>
 
 <div class="form-style-2">

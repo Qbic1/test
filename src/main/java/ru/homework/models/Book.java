@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.homework.forms.BookForm;
 
 import javax.persistence.*;
 
@@ -27,5 +28,12 @@ public class Book {
     @Override
     public String toString() {
         return '\"' + title + "\" " + author;
+    }
+
+    public static Book from(BookForm form) {
+        return Book.builder()
+                .title(form.getTitle())
+                .author(form.getAuthor())
+                .build();
     }
 }

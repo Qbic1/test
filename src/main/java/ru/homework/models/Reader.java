@@ -1,6 +1,7 @@
 package ru.homework.models;
 
 import lombok.*;
+import ru.homework.forms.ReaderForm;
 
 import javax.persistence.*;
 import java.util.List;
@@ -27,4 +28,13 @@ public class Reader {
     public String toString() {
         return firstName + " " + lastName;
     }
+
+    public static Reader from(ReaderForm form) {
+        return Reader.builder()
+                .firstName(form.getFirstName())
+                .lastName(form.getLastName())
+                .age(form.getAge())
+                .build();
+    }
+
 }
