@@ -22,5 +22,26 @@
         </tr>
     </#list>
     </table>
+
+    <form action="/cards" method="post">
+
+        <label for="reader">Reader
+            <select id="reader" name="reader">
+        <#list readers as reader>
+            <option>${reader}</option>
+        </#list>
+            </select>
+        </label>
+
+        <label for="book">Book
+            <select id="book" name="book">
+        <#list freeBooks as book>
+            <option>${book}</option>
+        </#list>
+            </select>
+        </label>
+
+        <input type="submit" value="Add card">
+    </form>
 </div>
 </body>
