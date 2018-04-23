@@ -4,6 +4,7 @@ import lombok.*;
 import ru.homework.forms.ReaderForm;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
@@ -17,7 +18,9 @@ public class Reader {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
     private int age;
 

@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface ReadersRepository extends JpaRepository<Reader, Long>{
     List<Reader> findAllByAgeBetween(int from, int to);
-    List<Reader> findAllByFirstName(String firstName);
 }
