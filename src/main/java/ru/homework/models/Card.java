@@ -25,4 +25,10 @@ public class Card {
     @OneToOne
     @JoinColumn(name = "bookId")
     private Book book;
+
+    public Card(Reader reader, Book book)
+    {
+        this.reader = reader;
+        this.book = book;
+    }
 }

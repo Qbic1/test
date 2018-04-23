@@ -20,10 +20,11 @@ public class BooksController {
 
     @GetMapping("/books")
     public String getBooksPage(ModelMap model, @RequestParam(required = false, name = "authorForSearch") String author) {
-        if (author != null)
+        if (author != null && !author.equals("All"))
             model.addAttribute("booksFromServer", repository.findAllByAuthor(author));
         else
             model.addAttribute("booksFromServer", repository.findAll());
+        model.addAttribute("authorList", repository.findAll());
         return "books";
     }
 

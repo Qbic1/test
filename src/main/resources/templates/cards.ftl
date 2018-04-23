@@ -23,12 +23,26 @@
     </#list>
     </table>
 
+    <form action="/cards" method="get">
+
+        <label for="readerForSearch">Reader
+            <select id="readerForSearch" name="readerForSearch">
+                <option>All</option>
+        <#list readers as reader>
+                <option>${reader}</option>
+        </#list>
+            </select>
+        </label>
+
+        <input type="submit" value="Find cards by reader name">
+    </form>
+
     <form action="/cards" method="post">
 
         <label for="reader">Reader
             <select id="reader" name="reader">
         <#list readers as reader>
-            <option>${reader}</option>
+                <option>${reader}</option>
         </#list>
             </select>
         </label>
@@ -36,7 +50,7 @@
         <label for="book">Book
             <select id="book" name="book">
         <#list freeBooks as book>
-            <option>${book}</option>
+                <option>${book}</option>
         </#list>
             </select>
         </label>

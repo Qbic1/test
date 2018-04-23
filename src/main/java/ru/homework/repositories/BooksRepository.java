@@ -11,4 +11,6 @@ public interface BooksRepository extends JpaRepository<Book, Long> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM book WHERE id NOT IN (SELECT book_id FROM card);")
     List<Book> findFreeBooks();
+
+    Book getByTitleAndAuthor(String title, String author);
 }

@@ -34,7 +34,12 @@
 
     <form method="get" action="/books">
         <label for="authorForSearch">Author name
-            <input class="input-field" type="text" id="authorForSearch" name="authorForSearch">
+            <select id="authorForSearch" name="authorForSearch">
+                <option>All</option>
+        <#list authorList as author>
+                <option>${author.getAuthor()}</option>
+        </#list>
+            </select>
         </label>
         <input type="submit" value="Find by author name">
     </form>
